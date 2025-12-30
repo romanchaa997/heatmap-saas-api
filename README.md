@@ -143,5 +143,81 @@ Core Intelligence (Consciousness, Quantum, Neural Networks)
 
 ---
 
+## API Endpoints
+
+### Authentication
+```
+POST /auth/token
+Content-Type: application/json
+
+{
+  "api_key": "your_api_key",
+  "secret": "your_secret"
+}
+
+Response:
+{
+  "access_token": "jwt_token",
+  "expires_in": 3600
+}
+```
+
+### Heat Map Generation
+```
+POST /api/v1/heatmap/generate
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+  "locations": [
+    {"latitude": 40.7128, "longitude": -74.0060, "intensity": 95},
+    {"latitude": 40.7282, "longitude": -73.7949, "intensity": 87}
+  ],
+  "format": "json",
+  "radius": 1000
+}
+
+Response:
+{
+  "heatmap_id": "hm_xxx",
+  "status": "success",
+  "data": {...}
+}
+```
+
+### Query Heatmaps
+```
+GET /api/v1/heatmap/{heatmap_id}
+Authorization: Bearer {access_token}
+```
+
+## Installation
+
+```bash
+pip install heatmap-saas-api
+```
+
+## Quick Start
+
+```python
+from heatmap_api import HeatmapClient
+
+client = HeatmapClient(api_key='your_key', secret='your_secret')
+
+# Generate heatmap
+response = client.generate_heatmap(
+    locations=[
+        {'lat': 40.7128, 'lon': -74.0060, 'intensity': 95}
+    ]
+)
+
+print(response['heatmap_id'])
+```
+
+## Support
+
+Email: support@aisprint.dev
+Docs: https://docs.heatmap-saas.io
+
 *Last Updated: December 30, 2025*
 *Status: Production Ready*
