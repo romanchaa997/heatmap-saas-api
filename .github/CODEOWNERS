@@ -1,0 +1,28 @@
+# Code Owners for Heatmap SaaS API
+# Real-time heatmap visualization and analytics API
+
+* @romanchaa997
+
+# Core API endpoints
+/api/ @romanchaa997
+/routes/ @romanchaa997
+/controllers/ @romanchaa997
+
+# Heatmap processing
+/heatmap/ @romanchaa997
+/visualization/ @romanchaa997
+/rendering/ @romanchaa997
+
+# Database and data layer
+/database/ @romanchaa997
+/models/ @romanchaa997
+/migrations/ @romanchaa997
+
+# Infrastructure and deployment
+/.github/ @romanchaa997
+docker-compose.yml @romanchaa997
+Dockerfile @romanchaa997
+
+# Documentation
+/*.md @romanchaa997
+/docs/ @romanchaa997
